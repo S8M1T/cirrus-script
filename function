@@ -25,7 +25,7 @@ rom_name=$(grep init /tmp/ci/sync -m 1 | cut -d / -f 4)
 upload_link=https://github.com/$CIRRUS_REPO_FULL_NAME
 branch_name=$(grep init /tmp/ci/sync | awk -F "-b " '{print $2}' | awk '{print $1}')
 upload_type=3
-latest_version=2
+latest_version=3
 
 # Compress function with pigz for faster compression
 com () {
@@ -33,7 +33,7 @@ tar --use-compress-program="pigz -k -$2 " -cf $1.tar.gz $1
 }
 
 # install apt
-install_apt () {
+#install_apt () {
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null
