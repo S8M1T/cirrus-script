@@ -22,7 +22,7 @@ repo init -u https://github.com/ForkLineageOS/android.git -b lineage-19.1 -g def
 # Sync source without unnecessary messages, try with -j30 first, if fails, it will try again
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
-# local manifest
+## local manifest
 git clone https://github.com/pjgowtham/android_device_oplus_RMX3360 -b lineage-19.1 device/oplus/RMX3360
 git clone https://github.com/pjgowtham/android_device_oplus_sm8350-common -b lineage-19.1 device/oplus/sm8350-common
 git clone https://gitlab.com/S8M1T/proprietary_vendor_oplus -b lineage-19.1 vendor/oplus
