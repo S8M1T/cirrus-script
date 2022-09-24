@@ -1,6 +1,6 @@
 # Normal build steps
-. build/envsetup.sh
-lunch rom_lavender-userdebug
+source build/envsetup.sh
+lunch lineage_RMX3360-userdebug
 
 # export variable here
 export TZ=Asia/Kolkata
